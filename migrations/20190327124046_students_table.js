@@ -13,6 +13,7 @@ exports.up = function(knex, Promise) {
         tbl
         .integer('cohort_id') // the column name in this table (users)
         .unsigned()
+        .notNullable()
         .references('id') // primary key in the related (parent) table (roles)
         .inTable('cohorts')
         .onDelete('CASCADE')
